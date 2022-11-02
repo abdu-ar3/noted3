@@ -1,0 +1,88 @@
+Catatan ngoding Laravel
+
+Langkah langkah menjalankan Laravel
+ 1. Download Laravel
+    composer create-project --prefer-dist laravel/laravel=^8.0 larashop
+	
+ 2. Menghapus public pada web server
+    * Ubah server.php menjadi index.php
+	* Copy .htaccess ke dalam root program (public)
+	
+ 3. Konfigurasi database
+	Buat database baru dengan nama larashop
+	
+ 4. Ubah env
+	Ganti nama DB_DATABASE nya sesuai DB yang mau di buat
+	
+ 5. User AUThentication
+    * Instal Laravel/ui
+	  -> composer require laravel/ui
+	* Buat authentication fitur
+	  -> php artisan ui bootstrap --auth
+	* Compile file-file assets/js
+	  -> npm install && npm run dev
+	  
+        Finished. Please run Mix again.
+		
+	  -> Jalankan lagi perintah npm install && npm run dev
+	   
+	* php artisan migrate
+	* Menyesuaikan tabel users dengan perintah
+	  php artisan make:migration penyesuaian_table_users
+	  
+	  public function up()
+	{
+	 Schema::table('users', function (Blueprint $table) {
+	 $table->string("username")->unique();
+	 $table->string("roles");
+	 $table->text("address")->nullable();
+	 $table->string("phone")->nullable();
+	 $table->string("avatar")->nullable();
+	 });
+	 }
+	 
+	 public function down()
+	 {
+	 Schema::table('users', function (Blueprint $table) {
+	 $table->dropColumn("username");
+	 $table->dropColumn("roles");
+	 $table->dropColumn("address");
+	 $table->dropColumn("phone");
+	 $table->dropColumn("avatar");
+	 });
+	 }
+	  
+ 6. Seeding user administrator (Jika Perlu) = Input database
+	  -> php artisan make:seeder AdministratorSeeder
+	   
+	   public function run()
+	 {
+	 $administrator = new \App\Models\User;
+	 $administrator->username = "administrator";
+	 $administrator->name = "Site Administrator";
+	 $administrator->email = "administrator@larashop.test";
+	 $administrator->roles = json_encode(["ADMIN"]);
+	 $administrator->password = \Hash::make("larashop");
+	 $administrator->avatar = "saat-ini-tidak-ada-file.png";
+	 $administrator->address = "Sarmili, Bintaro, Tangerang Selatan";
+	 $administrator->save();
+	 $this->command->info("User Admin berhasil diinsert");
+	 }
+
+	 -> php artisan db:seed --class=AdministratorSeeder
+	 
+7.
+	
+
+*& Manage Users
+CRUD User
+Membuat user resource
+	**& UserController
+	-> php artisan make:controller UserController --resource
+	**& Route resource
+	-> Route::resource("users", UserController::class);
+	
+
+Yang masih belum berjalan :
+Paginate, Menampilkan pagination dan nomor urut
+Pilih pilih kategori Buku

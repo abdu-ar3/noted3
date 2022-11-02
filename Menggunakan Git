@@ -1,0 +1,144 @@
+GIT
+Working Area 
+Staging Area
+History
+
+
+ls -> mengecek adda folder apa aja 
+pwd -> print working directory (directoy aktif)
+git init > membuat repository
+git add -> menambahkan file ke Staging Area
+git commit -m "isi pesannya"-> untuk Commit. Contoh :
+   * git commit -m "Mengubah file index dan menambahkan file style.css"
+git add . -> untuk menambahkan file semua file ke Staging Area
+git status ->
+git log -> melihat 
+git log -3 -> melihat 3 perubahan
+git log -- style.css -> melihat perubah pada file style.css
+
+Role :
+1) git init
+1) git init
+2) git add
+3) git commit -m 
+
+--------------------------------------------------------------------
+
+Repository	Database yang menyimpan history/ riwayat perubahan
+Snapshot	Potret kondisi file dan folder pada saat tertentu
+Commit	Snapshot yang disimpan di repository
+Branch	Serangkaian commit yang berkaitan sehingga kalau digambar seperti garis lurus berisi banyak commit. 
+        Satu repository bisa berisi banyak branch.
+Master	Nama branch default yang diberikan git pada waktu kita membuat repository. Branch master ini tidak istimewa. 
+         Dia bisa dihapus dan direname sesuka hati.
+Head	Ujung branch, commit terbaru di dalam branch
+HEAD	Head yang sedang aktif. Walaupun satu repository bisa memiliki banyak branch, tapi cuma satu yang aktif.
+Working Folder	Folder berisi file dan folder tempat kita bekerja. Biasanya working folder berisi banyak file source code 
+                untuk aplikasi yang sedang kita buat. Git memantau working folder ini, dan bisa mengetahui file 
+				dan folder mana yang sudah berbeda dari posisi commit terakhir. Perbedaan atau perubahan ini bisa 
+				disimpan menjadi commit baru, atau dikembalikan ke kondisi sebelum diubah.
+Staging Area	Snapshot dari working folder yang akan kita simpan pada saat commit. Ini adalah fitur unik Git 
+                yang tidak dimiliki version control lain. Dengan adanya staging area, kita bisa memilih perubahan mana 
+				yang akan di-commit dan mana yang tidak.
+Object Store	Ini adalah database tempat semua commit disimpan.
+
+________________________________________________________________________________________________________________
+
+GIT Branch dan Merge
+
+Melakukan Branch
+Git commit -am "pesannya"(sekaligus di add /git add)
+
+git branch dosen -> untuk membuat sebuah branch baru dengan nama (dosen)
+git log --all --decorate --oneline --graph -> yaitu 
+Melakukan visualisai branch dalam bentuk graph
+alias graph="git log --all --decorate --oneline --graph"
+git checkout <nama_branch> -> pindah branch/commit
+
+Role :
+1) git branch
+2) git branch dosen
+3) git checkout dosen
+4) git branch 
+5) git add .
+6) git commit -m ""
+7) git status
+
+Membuat Branch baru :
+1) git branch
+2) git branch tester 
+3) git branch
+4) git checkout tester
+5) git branch 
+
+Menggabungkan :
+1) git branch
+2) git checkout master
+3) git merge tester
+
+Memindahkan branch ke github:
+1) git branch 
+2) git checkout try
+3) git push
+4) git push --set-upstream origin try
+
+News PROGATE :
+** git pull origin master     -> KET -> Menngunduh file dari remote
+** git diff 				  -> KET -> Melihat konten yang di modif
+** git log                    -> KET -> Melihat riwayat commit
+
+ket : tester merupakan nama Branch
+
+ git push -u origin main = Untuk memidanhkan file ke dalam Github
+ 
+ Membuat Repository Github dan Simpan di Local
+ 1)  git init
+ 2) Buat File dengan nama file yang sama
+ 3)  git add .
+ 4) git commit -m "First Commit Rabu, 19 Januari 2022"
+ 5)  git branch
+ 6) git branch -M main
+ 7) git branch
+ 8)  git remote add origin https://github.com/abdu-ar3/catatancode.git
+ 9)  git push -u origin main
+ 
+Mengclone data dari Github
+Fork terlebih dahalu
+git clone https://github.com/abdu-ar3/portfolio.git 
+code .
+Modif yang mau di Edit pada vs code
+git add .
+git commit -m ""
+git push -u origin main
+
+Melakukan Merge 
+* Fast Forward
+* Three-way Merge
+
+ && NEW
+ 1) php artisan tinker
+ 2) $category = $Category::first()
+ 3) $category = Category::first()
+ 
+ 
+
+git merge dosen(dosen merupakan nama branch nya)
+git branch -d dosen. ket : menghapus nama branch dosen yang sudah di merge
+git branch -D dosen. ket : menghapus nama branch dosen beserta isinya
+git branch --merged -> mengecek branch mana yang sudah di merge
+
+:wq! -> keluar dari viewnya
+
+
+Update fork repository
+ *  git clone https://github.com/abdu-ar3/murahbanget.git -> Ket -> Repository yang sudah diclone
+ *  cd murahbanget
+ * 	git log
+ *	git status
+ * 	git remote -v
+ * 	git remote add upstream https://github.com/rachmadirawan/github-js-api-kelas-a.git -> Repository Asli
+ *	git fetch upstream
+ * 	git branch
+ * 	git pull upstream main
+ * 	git push origin main
+ 

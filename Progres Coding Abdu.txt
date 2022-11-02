@@ -1,0 +1,4 @@
+Progres Belajar Laravel
+14 April 2021 -> Belajar membuat seeding db atau insert melalui codingan
+15 April 2021 -> Belajar Model dalam Laravel
+16 April 2021 -> Belajar View dalam Laravel

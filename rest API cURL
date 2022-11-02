@@ -1,0 +1,30 @@
+cURL
+
+
+1) Ubah file html nya jadi .php
+2) Tambahkan Section baru dibawah About :
+  * buat section baru dengan nama social dan id ="social"
+   ** buat .container
+    *** buat .row
+	  *** buat .col ->tambahkan tex-center
+	  *** dengan judul h2 Social Media
+	  (tambahkan bg-light didalam section)
+	*** buat .row -> tambahkan justify-content-center
+	  *** buat .col-md-5
+		**** buat .row
+		  ***** buat .col-md-4
+		    ***** tambahkan img src width="100"
+		  ***** buat .col-md-8
+		    ***** h5 Abdhu Rohman
+			***** p subscribers
+	  *** buat .col-md-5
+		**** buat .row
+		  ***** buat .col-md-4
+		    ***** tambahkan img src width="100"
+		  ***** buat .col-md-8
+		    ***** h5 @abdu_ar3new
+			***** p followes
+		**** buat .row
+		  **** .col
+		    **** .ig-thumbnail
+			  ***** img src 

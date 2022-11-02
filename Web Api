@@ -1,0 +1,192 @@
+API adalah singkatan dari Application Programming Interface, dan memungkinkan developer untuk mengintegrasikan 
+dua bagian dari aplikasi atau dengan aplikasi yang berbeda secara bersamaan. 
+
+{ REST:API }
+REST(REpresentational State Transefer)
+MySQL = DBMS -> Database Management System
+
+Interface(Antar Muka) = Bagian yang sama antara dua atau lebih komponen terpisah pada sebuah sistem
+
+pre-requisite ? Apa yang harus kita pelajari terlebih dahulu ?
+* Javascript Dasar
+* Object
+* DOM -> Document Oriented Management
+* PHP Dasar
+* CI
+
+Prepare :
+# Code Editor 
+  * Visual Studio Code
+# Web Server 
+  * XAMPP
+# Web Browser
+  * Google Chrome
+# API Testing Tools 
+  * Postman (getpostman.com/download)
+  * Insomnia (Insomnia.com/download)
+
+API == REST API
+
+Ilustrasi 
+Api adalah penghubung
+Rest API adalah aturannya
+ada Request & Response 
+data yang dikirim / diterima berupa JSON
+
+HTTP (Hypertext Transefer Protocol)
+URL (Uniform Resource Locator)
+
+RESTful API
+* Menggunakan HTTP method yang benar 
+* URI / endpoints-nya menggunakan kata benda, bukan kata kerja
+* Stateless
+
+JSON ?
+
+Object ?
+Pada Javascript adalah kumpulan property, dan property ditulis dalam bentuk pasangan antara key dan value
+
+Key selalu dibungkus menggunakan ""
+
+Tipe data dari value pada JSON
+* Bolean - True / false
+* Array - ["value1", "value"]
+* String - teks/ unicode, dibungkus menggunakan "
+* Object - { "key" : "value"}
+* Number - integer / float 
+* Null
+disingkat BASONN
+
+PHP 
+* JSON_encode() Array menjadi Json
+* JSON_decode() Json menjadi Array
+
+JS
+* JSON.stringify() Object menjadi JSON
+* JSON.parse() JSON menjadi Object
+
+#4 Bekerja dengan JSON
+Pindakan file JSON dan IMG kedalam projek -> File Ar3-hut
+
+Buat Json :
+{ 
+    "menu": [
+        {
+            "kategori": "special",
+            "nama": "9 Pcs Bucket",
+            "deskripsi": "9 ptg Ayam",
+            "harga": 75000,
+            "gambar": "kfc-web_9pc-bucket-_t.png"
+        },
+        {
+            "kategori": "special",
+            "nama": "SUPER FAMILY HCC",
+            "deskripsi": "3 Nasi + 5 ptg Ayam HCC + 3 Minuman",
+            "harga": 80000,
+            "gambar": "kfc-web_super-familyhcc_t.png"
+        }
+    ]
+}
+Keterangan :
+{ -> Object
+"menu" -> key 
+[ -> valuenya yang berupa array
+{ -> isinya yang berupa object
+
+Menggunakan php :
+1) Buat file latihan 1
+2) Download atau di copy template bootstrap 
+3) Tambahkan Jquery CDN online nya
+4) Tambahkan navbar menggunakan bootstrap
+5) Masukan logo -> img/logo.png
+6) Buat container (Hapus -fluid) atau <div class="container">
+7) Buat Container :
+  . row
+  . col isinya  <h1>All Menu</h1>
+  * Buat row dan col( <div class="col-md-4"> )
+   ** Buat Card untuk menampilkan Menu, tambahkan -> mb-4 lengkapnya(card mb-4)
+     **  Input gambar
+	 ** Ganti judul dll
+8) Menampilkan JSON
+  * Dapatkan file JSON ->  $data = file_get_contents('data/pizza.json');
+  * kemudian dari JSON menjadi Array(true) -> $menu = json_decode($data, true); ///__Ket: $menu=variabel
+  * check apakah sudah terpanggil ?
+    //** var_dump($menu); atau
+	//** var_dump($menu["menu"][1]["nama"]);
+	**$menu = $menu["menu"];
+  * Looping dengan cara -> <?php foreach ($menu as $row) : ?>
+    ** Ganti dengan data yang ada di JSON // 
+	  *** <?= $row["gambar"]; ?>
+	  *** <?= $row["nama"]; ?>
+	  *** <?= $row["deskripsi"]; ?>
+	  keterangan :
+	  $row hasil looping dari $menu
+	  "gambar" -> key 
+	  "nama" -> key
+	  "deskripsi" -> key
+  * <?php endforeach; ?>  
+  
+  Keterangan : 
+  * col-mb-3 -> Untuk mengatur ukuran
+  * mt-4 -> Margin Top
+
+Noted : Jangan lupa;
+
+Menggunakan JS :
+1) Buat file latihan2.html
+2) hapus semua script php
+3) tambahkan id="daftrar-menu" pada class="row" -> <div class="row" id="daftar-menu">
+4) buat script baru ->  <script src="js/script.js"></script>
+5) buat folder JS dan filenya script.js
+   * script.js
+    ** Mengambil data json menggunakan ajax 
+	  *** $.getJSON('data/pizza.json', function (data) {
+				// console.log(data); //
+				let menu = data.menu;
+				**  $.each(menu, function (i, data) {
+				$('#daftar-menu').append('isinya string yang di file latihan1.php');
+				});
+	keterangan : console.log(data); -> untuk mencoba apakah data sudah tampil
+	$.each -> untuk melooping (pengulangan)
+6) Menambhakan kategory baru pada menu 
+   * Mengedit active yang terapat di li, dengan merubah class .nav-link
+   $('.nav-link').on('click', function () {
+        $('.nav-link').removeClass('active');
+        $(this).addClass('active');
+    })
+   * Merubah h1 pada katergory
+   let kategori = $(this).html();
+    $('h1').html(kategori);
+   * Menampilkan menu sesuai dengan kategorinya 
+   $.getJSON('data/pizza.json', function (data) {
+        let menu = data.menu;
+        let content = '';
+
+        $.each(menu, function (i, data) {
+            if (data.kategori == kategori.toLowerCase()) {
+                content += '<div class="col-md-4"><div class="card mb-4"><img src="img/menu/' + data.gambar + '" class="card-img-top"><div class="card-body"><h5 class="card-title">' + data.nama + '</h5><p class="card-text">' + data.deskripsi + '</p><h5 class="card-title">' + data.harga + '</h5><a href="#" class="btn btn-primary">Pesan Sekarang</a></div></div></div>';
+            }
+        });
+
+        $('#daftar-menu').html(content);
+    });
+	* Bungkus dengan function tampilkanSemuaMenu() {
+	  Isinya #daftar-menu (Syntaknya)
+	}
+	tampilkanSemuaMenu()
+	* Cegat data menu kategori dengan menampilkan semua menu
+	if (kategori == 'All Menu') {
+        tampilkanSemuaMenu()
+        return;
+    }
+	
+	Keterangan : 
+	** .nav-link -> class nav-link 
+	** .on('click') -> ketika di click
+	** function -> fungsi
+	** .removeClass -> hapus class
+	** .removeClass('active') -> hapus class yang aktifnya
+	** .addClass('active') -> tambah class yang aktifnya
+	
+	
+

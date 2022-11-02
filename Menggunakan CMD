@@ -1,0 +1,14 @@
+Menggunakan CMD
+$ mkdir directory_name 		-> Membuat Folder baru
+$ touch first.txt 			-> Membuat file baru
+$ cat first.txt				-> Menampilkan konten dalam file
+$ cd
+$ pwd						-> cek direktori
+$ ls 						-> Menampilkan daftar file
+$ cd .. 					-> Pindah ke direktori/file sebelumnya
+$ cd (tanpa lanjutan)		-> kembali ke awal direktori
+$ mv file_awal file_tujuan 	-> Move file/folder
+$ mv file_lama ganti_file	-> Remove File
+$ cp -r copy_file ubah_file	-> Mengcopy paste lalu mengganti nama file
+$ rm -r delete.txt			-> Mengapus sebuah file/folder
+

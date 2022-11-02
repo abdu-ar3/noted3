@@ -1,0 +1,50 @@
+Git vs Git Hub
+
+Git ?
+Version Control System
+Kendali versi merupakan suatu sistem pengelolaan berbagai revisi 
+atas perubahan dari suatu unit informasi baik berupa dokumen, kode sumber, ataupun informasi 
+lainnya yang disimpan dalam media penyimpanan komputer. Wikipedia
+
+Kegunaan :
+Melacak versi
+Sharing
+Kolaborasi -> VCS
+
+* Sebuah sistem yang menyimpan rekaman/snapshot perubahan pada source code
+* Memungkinkan bekerja berkolaborasi dengan baik
+* Mengetahui siapa yang melakukan dan kapan sebuah perubahan terjadi.
+* Memungkinkan kita untuk kembali ke keadaan sebelum perubahan 
+
+GIT ??
+Git adalah perangkat lunak pengendali versi atau proyek manajemen kode perangkat lunak
+yang diciptakan oleh Linus Torvalds, yang pada awalnya ditujukan untuk pengembangan kernel Linux.
+
+ISTILAH
+perubahan file di dalam folder -> (repository / repo)
+Riwayat perubahan file disimpan menggunakan serangkaian (Commit)
+Cabang (Branch)
+Megambunggkan 2 buah Branch disebut (Merge)
+-------------------------------------------------------------------------------------------------
+
+GIT HUB ?
+Layanan cloud untuk menyimpan & mengelola project / repo git.
+Instagram nya para Programmer (Sandhika Galih)
+
+----------------------------------------------------------------------------------------------
+
+membuat Branch
+Branch -> jalur 'development' bebas dari sebuah commit
+checkout -> berpindah ke branch / commit yang lain
+pull request -> Meminta pemilik reponya untuk 'mengambil' perubahan yang telah dilakukan
+Merge -> Menggabungkan 2 branch
+Merge Conflict -> Baris yang sama diubah oleh 2 branch yang berbeda
+
+---------------------------------------------------------------------------------------------
+
+GI HUB : FORK
+FORK / FORKING
+
+
+
+

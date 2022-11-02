@@ -1,0 +1,201 @@
+JAVA SCRIPT
+
+Menggupdate variable 
+	let name = "Abdu"
+	name = "Abdu Rohman"
+
+	console.log(name);
+
+Update Variable Number 
+	let number = 7;
+	console.log(number);
+
+	// Tambahkan 3 ke nilai variable number
+	number = number + 3;
+	console.log(number);
+
+	// Bagi nilai variable number dengan 2
+	number = number / 2;
+	console.log(number);
+
+Menggunakan IF 
+	const age = 24;
+
+	// Cetak hasil dari age >= 18
+	console.log(age >= 18);
+
+	// Cetak hasil dari age < 18
+	console.log(age < 18);
+
+	/* Ketika nilai dari age lebih besar atau sama dengan 18
+	dan cetak "Saya berusia lebih dari 18 tahun" */
+	if (age >= 18) {
+	  console.log("Saya berusia lebih dari 18 tahun");
+	}
+
+EXAMPLE 
+	const password = "ninjaken";
+
+	// Ketika nilai password adalah "ninjaken", cetak "Berhasil log in"
+	if (password === "ninjaken") {
+	  console.log("Berhasil log in");
+	}
+
+	// Ketika nilai password bukan "ninjaken", cetak "Password salah"
+	if (password !== "ninjaken") {
+	  console.log("Password salah");
+	}
+	
+Swicth
+	const rank = 5;
+
+	switch (rank) {
+	  case 1:
+		console.log("Anda meraih medali emas!");
+		break;
+	  case 2:
+		console.log("Anda meraih medali perak!");
+		break;
+	  case 3:
+		console.log("Anda meraih medali perunggu!");
+		break;
+	  // Tambahkan default
+	  default:
+	  console.log("Semoga sukses dikesempatan berikutnya");
+	  break;
+	}
+
+Looping / loop 
+	// Deklarasikan variable number
+	let number = 1;
+
+	// Tambahkan while loop dibawah
+	while (number <= 100) {
+	  console.log(number);
+	  number += 1;
+	}
+
+Array
+	Update Nilai array
+	const animals = ["anjing", "kucing", "domba"];
+
+	// Gantikan element ketiga dari array menjadi "kelinci"
+	animals[2] = "kelinci";
+
+	// Print array ketiga dari constant animal ke console
+	console.log(animals[2]);
+	
+EXAMPLE
+	const animals = ["anjing", "kucing", "domba"];
+
+	// Gunakan loop for untuk mem-print nilai animals di console secara berurutan
+	for(let i = 0; i < 3; i++) {
+	  console.log(animals[i]);
+	}
+
+
+Undifine
+	const characters = [
+  {name: "Ninja Ken", age: 14},
+  {name: "Guru Domba", age: 100},
+  {name: "Baby Ninja Ben", age: 5},
+  {name: "Birdie"}
+	];
+
+	for (let i = 0; i < characters.length; i++) {
+  console.log("--------------------");
+  
+  const character = characters[i];
+  
+  console.log(`Nama saya adalah ${character.name}`);
+  
+  // Tambahkan statement if dibawah
+  if (character.age === undefined){
+    console.log("Umur saya rahasia!");
+  } else {
+    console.log(`Saya berumur ${character.age} tahun`);
+  }
+}
+
+
+Object 
+	const cafe = {
+  name: "Progate Cafe",
+  businessHours: {
+    // Tetapkan object yang sudah disediakan untuk businessHours
+    opening: "10:00",
+    closing: "20:00"
+  },
+	};
+
+	// Print "Nama: ____"
+	console.log(`Nama: ${cafe.name}`);
+
+	// Print "Jam: Dari jam ____ sampai jam ____"
+	console.log(`Jam: Dari jam ${cafe.businessHours.opening} sampai jam ${cafe.businessHours.closing}`);
+
+
+function JS
+	class Animal {
+	  // Tambahkan argument「name」dan「age」
+	  constructor(name, age) {
+		// Gantikan nilai string "Leo" dengan nilai milik argument name
+		this.name = name;
+		
+		// Gantikan「3」dengan nilai milik argument age
+		this.age = age;
+	  }
+	}
+
+	// Teruskan argument「"Mocha"」「8」ke constant animal dibawah
+	const animal = new Animal("Mocha", 8);
+
+	console.log(`Nama: ${animal.name}`);
+	console.log(`Usia: ${animal.age}`);
+
+EXAMPLE
+	class Animal {
+	  constructor(name, age) {
+		this.name = name;
+		this.age = age;
+	  }
+	  
+	  greet() {
+		console.log("Halo");
+	  }
+	  
+	  // Tambahkan method info
+	  info() {
+		console.log(`Nama saya adalah ${this.name}`);
+		console.log(`Saya berusia ${this.age} tahun`);
+	  }
+	  
+	}
+
+	const animal = new Animal("Leo", 3);
+	animal.greet();
+
+	// Panggil method info menggunakan constant animal
+	animal.info();
+
+
+Argument pada function
+	package main
+
+	import "fmt"
+
+	func main() {
+		// Panggil function「ask」 sebanyak 3 kali dengan sebuah argument 
+		ask("anjing")
+		ask("kucing")
+		ask("ikan")
+	}
+
+	// Lakukan edit pada function untuk menerima sebuah argument
+	func ask(question string) {
+		var input string
+		// Ubah code berikut ini dengan menggunakan `fmt.Printf`
+		fmt.Printf("Silahkan memasukkan kata berikut: %s\n", question)
+		fmt.Scan(&input)
+		fmt.Printf("%s telah dimasukkan\n", input)
+	}

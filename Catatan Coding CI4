@@ -1,0 +1,71 @@
+Belajar CodeIgniter 4
+
+Langka langka yang harus di ubah/Setingan yang diubah :
+1.Backup folder env nya (Untuk jaga-jaga, ketika lupa); 
+2.Ubah env menjadi .env
+3. Buka file .env nya
+4. Ubah CI_ENVIRONMENT = production menjadi CI_ENVIRONMENT = development
+CI_ENVIRONMENT = development agar ketika terjadi eror bisa terlihat erornya
+5. tambahkan pada app.baseURL = 'localhost:8080'
+6.Done
+
+Routes & Controller 
+$routes->get('/', 'Home::index');
+/ = Root 
+Home = Controller 
+Index = Method
+
+Segment = String yang dibatasi oleh Slide/
+Nama Controller harus sama dengan nama File
+
+
+------------------------------------------------
+Cek Composer
+-> composer
+
+Cek PHP
+-> php -v
+
+Buat snippet
+-> file -> preferences -> user interface 
+
+Menjalankan dengan Serve
+-> php spark serve
+
+----------------------------
+Download ci4
+composer create-project codeigniter4/appstarter ci4app --no-dev
+
+---------------------------------------------------------
+Bermain dengan .env
+* Ubah -> app.baseURL = 'http://localhost:8080'
+* Ubah -> CI_ENVIRONMENT = development
+------------------------------------------------------
+Routes
+$routes->get('/coba/(:any)', 'Coba::about/$1');
+:any -> Semuanya bebas apapun
+:alpha -> a-z
+:num -> hanya nomor
+:segment -> kecuali garing
+:alphanum -> hanya Angka dan Huruf
+----------------------------------------------------------------
+** Contoller **
+Buat Title
+$data = [
+            'title' => 'Home | CI4App'
+        ];
+		
+		
+		isinya:
+		<title><?= $title; ?></title>
+--------------------------------------------------------------	
+** View Templates **
+<?= $this->extend('layouts/template'); ?>
+
+<?= $this->section('content'); ?>
+<?= $this->endSection(); ?>
+
+Yang ada di dalam Templates nya
+<?= $this->renderSection('content'); ?>
+----------------------------------------------------------------
+

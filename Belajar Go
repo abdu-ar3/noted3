@@ -1,0 +1,131 @@
+Penggabungan 
+	package main
+
+	func main() {
+		// Gabungkan string-string "Hello, " dan "world", lalu cetak
+		println("Hello," + "world")
+		
+		// Gabungkan string-string "38" dan "19", lalu cetak
+		println("38" + "19")
+		
+		// Cetak penjumlahan 38 dan 19
+		println(38 + 19)
+
+	}
+
+DASAR VARIABLE
+	package main
+
+	func main() {
+		// Deklarasikan variable `message` dan tetapkan nilai "Hello, world"
+		var message string = "Hello, world"
+		  
+		// Cetak nilai dari dari variable `message`
+		 println(message)
+		
+	}
+	
+MEMPERBARUI VARIABLE
+	package main
+
+	func main() {
+		var message string = "Hello, world"
+
+		// Perbarui variable `message` dengan "Hello, Go"
+		message = "Hello, Go"
+		
+		println(message)
+	}
+
+
+	
+	
+JENIS VARIABLE -> LEBIH SIMPLE
+	package main
+
+	func main() {
+		// Deklarasikan variable `message` dan tetapkan "Hello, world" pada-nya
+		message := "Hello, world"
+		
+		// Deklarasikan variable `number` dan tetapkan `100` pada-nya 
+		number := 100
+		
+		// Cetak nilai dari `message` dan `number`
+		println(message, number)
+		
+	}
+
+
+Operator dalam var
+	package main
+
+	func main() {
+		n := 100
+		// Kurangkan 10 dari variable `n` lalu tetapkan hasilnya kembali pada `n`
+		n -= 10
+		
+		println(n)
+		
+		
+		m := 10
+		// Tambahkan 1 pada variable `m` lalu tetapkan hasilnya kembali pada `m`
+		m++
+		
+		println(m)
+	}
+
+IF 
+	package main
+
+	func main() {
+		x := 123
+		y := 5 * 6
+		
+		// Ketika x lebih besar atau sama dengan 100, cetak "x lebih besar atau sama dengan 100"
+		if x >= 100 {
+			println("x lebih besar atau sama dengan 100")
+		}
+		
+		// Ketika y kurang dari 40, cetak "y kurang dari 40"
+		if y < 40 {
+			println("y kurang dari 40")
+		}
+		
+	}
+	
+IF ELSE KETIKA FALSE 
+	package main
+
+	func main() {
+		money := 100
+		price := 200
+		
+		// Tambahkan sebuah pernyataan `else`
+		if money >= price {
+			println("Anda bisa membeli produk ini")
+		} else {
+			println("Anda tidak memiliki cukup uang")
+		}
+		
+	}
+
+
+Menggunakan Import dan FMT
+
+
+Format fmt dan %d
+	package main
+
+	import "fmt"
+
+	func main() {
+		month := 9
+		day := 5
+
+		// Cetak "Tanggal hari ini adalah ____/____" menggunakan fmt.Printf
+		fmt.Printf("Tanggal hari ini adalah %d/%d", month, day)
+
+	}
+
+
+
