@@ -55,6 +55,10 @@ Melakukan visualisai branch dalam bentuk graph
 alias graph="git log --all --decorate --oneline --graph"
 git checkout <nama_branch> -> pindah branch/commit
 
+Masukan email & username:
+$ git config --global user.name "UsernameAnda"
+$ git config --global user.email IsiDenganEmailAnda@gmail.com
+
 Role :
 1) git branch
 2) git branch dosen
