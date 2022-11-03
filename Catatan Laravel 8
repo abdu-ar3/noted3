@@ -22,6 +22,10 @@ Langkah langkah menjalankan Laravel
 	* Compile file-file assets/js
 	  -> npm install && npm run dev
 	  
+	  OR coba satu satu:
+	  -> npm install
+	  -> npm run build
+	  
         Finished. Please run Mix again.
 		
 	  -> Jalankan lagi perintah npm install && npm run dev
